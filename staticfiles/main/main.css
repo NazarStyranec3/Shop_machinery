@@ -13,18 +13,109 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    gap: 30px;
+    padding: 30px;
 }
 
+
+.content_item {
+    display: flex;
+    flex-direction: column; 
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1.5px 2px rgba(0,0,0,0.12);
+    text-decoration: none; /* Забираємо підкреслення у <a> */
+}
+
+/* Зображення зверху */
 .content_img {
-    max-width: 500px;
-    max-height: 500px;
-        object-fit: cover;
-    }
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
     
+}
+
+
+/* Текст під фото */
+.overlay_text {
+    font-size: 2.2rem;
+    color: #222;
+    font-weight: bold;
+    white-space: normal;
+    word-break: break-word;
+    text-align: center; /* центруємо текст */
+}
+
+/* Для малих екранів - по одному в ряд */
+@media (max-width: 900px) {
     .content_item {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        flex: 0 0 90%;
+        max-width: 90%;
     }
-    
+}
+
+/* Для середніх екранів - по два в ряд */
+@media (min-width: 901px) and (max-width: 1199px) {
+    .content_item {
+        flex: 0 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+}
+@media (max-width: 600px) {
+    .content_img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 15px;
+        
+    }
+}
+
+
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+}
+
+.product-detail-img {
+    width: 900px;
+    height: 900px;
+    max-width: 100vw;
+    max-height: 70vw;
+    object-fit: cover;
+}
+.product-detail-name{
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1.5px 2px rgba(0,0,0,0.12);
+    padding: 30px 80px 30px 80px;
+    border-radius: 30px;
+}
+
+.product-info{
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 1.5px 2px rgba(0,0,0,0.12);
+    padding: 30px 80px 30px 80px;
+    border-radius: 30px;
+}
+@media (max-width: 600px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 12px;
+    }
+    .product-detail-img {
+        width: 95vw;
+        height: 60vw;
+        max-width: 360px;
+        max-height: 360px;
+    }
+    .product-info{
+        padding: 10px 30px 10px 30px;
+    }
+}
